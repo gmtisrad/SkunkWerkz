@@ -1,0 +1,7 @@
+- name: Bootstrap the box
+  hosts: fresh
+  become_user: root
+  roles:
+    - bootstrap
+    - deploy-user
+    - ssh

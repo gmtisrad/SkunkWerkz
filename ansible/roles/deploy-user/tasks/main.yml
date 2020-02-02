@@ -1,0 +1,10 @@
+- name: Create the deploy uesr group.
+  group: name=deploy
+  become: yes
+
+- name: Create deploy user.
+  user: name=deploy
+        group=deploy
+        groups=staff
+        shell=/bin/bash
+  become: yes

@@ -1,0 +1,15 @@
+- name: install deploy user ssh key
+  authorized_key: user=deploy key="{{ item }}"
+  with_file:
+    - keys/gabe
+  become: yes
+
+- name: configure sshd
+  become: yes
+  template: src=sshd_config
+            dest=/etc/ssh/sshd_config
+            owner=root
+            group=root
+            mode=0644
+  notify:
+    - restart sshd
