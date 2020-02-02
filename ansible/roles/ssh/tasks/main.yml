@@ -2,6 +2,7 @@
   authorized_key: user=deploy key="{{ item }}"
   with_file:
     - keys/gabe
+    - keys/eric
   become: yes
 
 - name: configure sshd
