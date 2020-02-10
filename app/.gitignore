@@ -1,0 +1,10 @@
+.vagrant
+.vscode
+/.idea
+/node_modules
+.env
+/logs
+/dist
+
+
+npm-debug.log
