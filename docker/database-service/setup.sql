@@ -13,6 +13,10 @@ CREATE TABLE accounts (
     id INT NOT NULL AUTO_INCREMENT,
     entity_id INT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -102,13 +106,13 @@ CREATE TABLE shelf_items (
 
 -- Create a seeker account
 -- A seeker account has a cart and an entity associated with it.
-INSERT INTO accounts (entity_id) VALUES (1);
+INSERT INTO accounts (entity_id, first_name, last_name, email, password) VALUES (1, 'Root', 'Internal', 'root@skunkwerkz.com', '$2y$12$YGgoJBS061Atqy.HhPUpsu7rPf97GKxQobrxsEEgctTqW3BSrR3he');
 INSERT INTO entities (account_id, type_key) VALUES(1, 'seeker');
 INSERT INTO carts (entity_id) values(1);
 
 -- Create an agent account
 -- An agent account has a shelf and an entity associated with it.
-INSERT INTO accounts (entity_id) values (2);
+INSERT INTO accounts (entity_id, first_name, last_name, email, password) values (2, "Root2", "Internal", "root2@skunkwerkz.com", "$2y$12$YGgoJBS061Atqy.HhPUpsu7rPf97GKxQobrxsEEgctTqW3BSrR3he");
 INSERT INTO entities (account_id, type_key) VALUES(2, 'agent');
 INSERT INTO shelves (entity_id) values(2);
 
