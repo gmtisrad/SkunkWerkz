@@ -108,13 +108,13 @@ CREATE TABLE shelf_items (
 
 -- Create a seeker account
 -- A seeker account has a cart and an entity associated with it.
-INSERT INTO accounts (entity_id, first_name, last_name, email, password) VALUES (1, 'Root', 'Internal', 'root@skunkwerkz.com', '$2y$12$YGgoJBS061Atqy.HhPUpsu7rPf97GKxQobrxsEEgctTqW3BSrR3he');
+INSERT INTO accounts (entity_id, first_name, last_name, email, password) VALUES (1, 'Root', 'Internal', 'root@skunkwerkz.com', '$2b$10$b.J7VuMQpHvCOfjhrWOlOuTGMG1m.Of9LvBexNXGUSsgsv1A2Bqa2');
 INSERT INTO entities (account_id, type_key) VALUES(1, 'seeker');
 INSERT INTO carts (entity_id) values(1);
 
 -- Create an agent account
 -- An agent account has a shelf and an entity associated with it.
-INSERT INTO accounts (entity_id, first_name, last_name, email, password) values (2, "Root2", "Internal", "root2@skunkwerkz.com", "$2y$12$YGgoJBS061Atqy.HhPUpsu7rPf97GKxQobrxsEEgctTqW3BSrR3he");
+INSERT INTO accounts (entity_id, first_name, last_name, email, password) values (2, "Root2", "Internal", "root2@skunkwerkz.com", "$2b$10$b.J7VuMQpHvCOfjhrWOlOuTGMG1m.Of9LvBexNXGUSsgsv1A2Bqa2");
 INSERT INTO entities (account_id, type_key) VALUES(2, 'agent');
 INSERT INTO shelves (entity_id) values(2);
 
