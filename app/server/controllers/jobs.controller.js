@@ -11,11 +11,15 @@ import Job from '../models/job.model';
 export function findAll(req, res) {
     Job.forge()
         .fetchAll()
-        .then(job => res.join({
+        .then(job => res.json({
             error:false,
             data: job.toJSON()
         }))
-        .catch(err => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-            error: err
-        }))
+        .catch(err => {
+            console.log(err);
+            return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+                error: err
+            });
+        });
+
 }
