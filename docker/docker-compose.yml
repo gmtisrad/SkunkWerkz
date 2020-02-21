@@ -10,5 +10,12 @@ services:
      - DATABASE_HOST=db
     volumes:
      - ../app:/app/
+    links:
+     - db
+     - db:database
   db:
     build: ./database-service
+    expose:
+     - 3306
+    ports:
+     - "3306:3306"
